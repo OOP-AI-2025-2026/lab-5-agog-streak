@@ -33,6 +33,12 @@ public class PaintSurface extends JComponent {
     private final List<Color> colors = Arrays.asList
             (Color.YELLOW, Color.MAGENTA, Color.CYAN, Color.RED, Color.BLUE, Color.PINK);
 
+    // Кнопка для видалення об'єктів
+    public void clearShapes() {
+        shapes.clear();  // очищаємо список фігур
+        repaint();       // перемальовуємо поверхню
+    }
+
     public PaintSurface() {
 
         // Спочатку тип фігури дорівнює 0
@@ -179,5 +185,6 @@ public class PaintSurface extends JComponent {
             Shape line = new Line2D.Float(0, i, getSize().width, i);
             g2.draw(line);
         }
+
     }
 }
